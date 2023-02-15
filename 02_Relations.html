@@ -433,6 +433,120 @@
 </div>
 </div>
 </section>
+<section id="расстояния" class="slide level2">
+<h2>Расстояния</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h4 id="евклидово-расстояние">Евклидово расстояние</h4>
+<p>Используется в плоских прямоугольных системах координат</p>
+<p><span class="math display">\[
+d(A,B) = \sqrt{(x_A - x_B)^2 + (y_A - y_B)^2}
+\]</span></p>
+<div class="callout callout-warning callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Ограничения</strong></p>
+</div>
+<div class="callout-content">
+<p>Евклидово расстояние наследует искажения проекции, а также предполагает, что объекты доступны напрямую.</p>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/dist_euc.svg" style="width:70.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="расстояния-1" class="slide level2">
+<h2>Расстояния</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h4 id="манхэттенское-расстояние">Манхэттенское расстояние</h4>
+<p>Аппроксимирует реальное расстояние между точками в транспортных сетях с ортогональной планировкой.</p>
+<p><span class="math display">\[
+d(A,B) = |x_A - x_B| + |y_A - y_B|
+\]</span></p>
+<div class="callout callout-warning callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Ограничения</strong></p>
+</div>
+<div class="callout-content">
+<p>Даёт преимущества только в том случае когда дорожная сеть ориентирована по направлениям осей <span class="math inline">\(X\)</span> и <span class="math inline">\(Y\)</span>.</p>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/dist_manh.svg" style="width:70.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="расстояния-2" class="slide level2">
+<h2>Расстояния</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h4 id="геодезические-расстояние">Геодезические расстояние</h4>
+<p>Кратчайшее расстояние между точками на поверхности эллипсоида. Для сферы:</p>
+<p><span class="math display">\[
+d(A,B) = \\ \arccos (
+\sin \phi_A \sin \phi_B + \\
+\cos \phi_A \cos \phi_B \cos(\lambda_A - \lambda_B))
+\]</span></p>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/dist_geo.svg" style="width:75.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="callout callout-note callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Геодезическая линия и ортодромия</strong></p>
+</div>
+<div class="callout-content">
+<p>Линия кратчайшего расстояния <em>на эллипсоиде</em> — <strong>геодезическая</strong>.<br>
+Линия кратчайшего расстояния <em>на сфере</em> — <strong>ортодромия.</strong></p>
+</div>
+</div>
+</div>
+</section>
+<section id="метрические-отношения" class="slide level2">
+<h2>Метрические отношения</h2>
+<p><strong>Метрические отношения</strong> устанавливают расстояния между объектами с использованием выбранной метрики.</p>
+
+<img data-src="images/dist_all.svg" style="width:100.0%" class="r-stretch"><div class="callout callout-note callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Метрики</strong></p>
+</div>
+<div class="callout-content">
+<p>Для оценки расстояний может использоваться множество других метрик. Они не исчерпываются приведенными примерами.</p>
+</div>
+</div>
+</div>
+</section>
 <section id="библиография" class="slide level2 smaller scrollable">
 <h2>Библиография</h2>
 <div class="footer footer-default">
