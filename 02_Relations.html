@@ -557,6 +557,13 @@ d(A,B) = \\ \arccos (
 <p>Внутренняя область и граница <strong>A</strong> не имеют пересечений с внутренней областью и границей <strong>B</strong></p>
 </dd>
 </dl>
+<p><span class="math display">\[
+\begin{bmatrix}
+    0 &amp; 0 &amp; \bf{1} \\
+    0 &amp; 0 &amp; \bf{1} \\
+    \bf{1} &amp; \bf{1} &amp; \bf{1} \\
+\end{bmatrix}
+\]</span></p>
 <div class="callout callout-note callout-captioned callout-style-default">
 <div class="callout-body">
 <div class="callout-caption">
@@ -585,6 +592,13 @@ d(A,B) = \\ \arccos (
 <p>Границы, внутренние и внешние области <strong>A</strong> пересекаются с <em>аналогичными</em> элементами <strong>B</strong></p>
 </dd>
 </dl>
+<p><span class="math display">\[
+\begin{bmatrix}
+    \bf{1} &amp; 0 &amp; 0 \\
+    0 &amp; \bf{1} &amp; 0 \\
+    0 &amp; 0 &amp; \bf{1} \\
+\end{bmatrix}
+\]</span></p>
 <div class="callout callout-note callout-captioned callout-style-default">
 <div class="callout-body">
 <div class="callout-caption">
@@ -613,6 +627,13 @@ d(A,B) = \\ \arccos (
 <p>Все компоненты <strong>A</strong> пересекаются со всеми компонентами <strong>B</strong></p>
 </dd>
 </dl>
+<p><span class="math display">\[
+\begin{bmatrix}
+    \bf{1} &amp; \bf{1} &amp; \bf{1} \\
+    \bf{1} &amp; \bf{1} &amp; \bf{1} \\
+    \bf{1} &amp; \bf{1} &amp; \bf{1} \\
+\end{bmatrix}
+\]</span></p>
 <div class="callout callout-note callout-captioned callout-style-default">
 <div class="callout-body">
 <div class="callout-caption">
@@ -638,9 +659,16 @@ d(A,B) = \\ \arccos (
 <dl>
 <dt>Касается</dt>
 <dd>
-<p>Граница <strong>A</strong> пересекается с границей <strong>B</strong>, а их внешние области пересекаются с внутренними областями друг друга.</p>
+<p>Внутренняя область и граница <strong>A</strong> не пересекатся с внутренней областью <strong>B</strong> и наоборот.</p>
 </dd>
 </dl>
+<p><span class="math display">\[
+\begin{bmatrix}
+    0 &amp; 0 &amp; \bf{1} \\
+    0 &amp; \bf{1} &amp; \bf{1} \\
+    \bf{1} &amp; \bf{1} &amp; \bf{1} \\
+\end{bmatrix}
+\]</span></p>
 <div class="callout callout-note callout-captioned callout-style-default">
 <div class="callout-body">
 <div class="callout-caption">
@@ -669,6 +697,13 @@ d(A,B) = \\ \arccos (
 <p>Внешняя область <strong>A</strong> не пересекается с границей и внутренней областью <strong>B</strong>, остальные пересечения присутствуют.</p>
 </dd>
 </dl>
+<p><span class="math display">\[
+\begin{bmatrix}
+    \bf{1} &amp; \bf{1} &amp; \bf{1} \\
+    0 &amp; \bf{1} &amp; \bf{1} \\
+    0 &amp; 0 &amp; \bf{1} \\
+\end{bmatrix}
+\]</span></p>
 <div class="callout callout-note callout-captioned callout-style-default">
 <div class="callout-body">
 <div class="callout-caption">
@@ -678,12 +713,117 @@ d(A,B) = \\ \arccos (
 <p><strong>Применение</strong></p>
 </div>
 <div class="callout-content">
-<p>Используется чтобы установить, что один объект содержит внутри себя другой объект, который прикасается к его границе.</p>
+<p>Используется чтобы установить, что один объект содержит внутри себя другой объект, который касается его границы.</p>
 </div>
 </div>
 </div>
 </div><div class="column" style="width:50%;">
 <p><img data-src="images/topo_covers.svg" style="width:70.0%"></p>
+</div>
+</div>
+</section>
+<section id="топологические-отношения-5" class="slide level2">
+<h2>Топологические отношения</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<dl>
+<dt>Покрыт</dt>
+<dd>
+<p>Внешняя область <strong>B</strong> не пересекается с границей и внутренней областью <strong>A</strong>, остальные пересечения присутствуют.</p>
+</dd>
+</dl>
+<p><span class="math display">\[
+\begin{bmatrix}
+    \bf{1} &amp; 0 &amp; 0 \\
+    \bf{1} &amp; \bf{1} &amp; 0 \\
+    \bf{1} &amp; \bf{1} &amp; \bf{1} \\
+\end{bmatrix}
+\]</span></p>
+<div class="callout callout-note callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Применение</strong></p>
+</div>
+<div class="callout-content">
+<p>Используется чтобы установить, что один объект содержится внутри другого объекта и касается его границы.</p>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<p><img data-src="images/topo_covered.svg" style="width:70.0%"></p>
+</div>
+</div>
+</section>
+<section id="топологические-отношения-6" class="slide level2">
+<h2>Топологические отношения</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<dl>
+<dt>Содержит</dt>
+<dd>
+<p>Внешняя область и граница <strong>A</strong> не пересекается с границей и внутренней областью <strong>B</strong>, остальные пересечения присутствуют.</p>
+</dd>
+</dl>
+<p><span class="math display">\[
+\begin{bmatrix}
+    \bf{1} &amp; \bf{1} &amp; \bf{1} \\
+    0 &amp; 0 &amp; \bf{1} \\
+    0 &amp; 0 &amp; \bf{1} \\
+\end{bmatrix}
+\]</span></p>
+<div class="callout callout-note callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Применение</strong></p>
+</div>
+<div class="callout-content">
+<p>Используется чтобы установить, что один объект содержит внутри себя другой объект.</p>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<p><img data-src="images/topo_contains.svg" style="width:80.0%"></p>
+</div>
+</div>
+</section>
+<section id="топологические-отношения-7" class="slide level2">
+<h2>Топологические отношения</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<dl>
+<dt>Внутри</dt>
+<dd>
+<p>Внешняя область и граница <strong>B</strong> не пересекается с границей и внутренней областью <strong>A</strong>, остальные пересечения присутствуют.</p>
+</dd>
+</dl>
+<p><span class="math display">\[
+\begin{bmatrix}
+    \bf{1} &amp; 0 &amp; 0 \\
+    \bf{1} &amp; 0 &amp; 0 \\
+    \bf{1} &amp; \bf{1} &amp; \bf{1} \\
+\end{bmatrix}
+\]</span></p>
+<div class="callout callout-note callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Применение</strong></p>
+</div>
+<div class="callout-content">
+<p>Используется чтобы установить, что один объект содержится внутри другого объекта.</p>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<p><img data-src="images/topo_within.svg" style="width:70.0%"></p>
 </div>
 </div>
 </section>
