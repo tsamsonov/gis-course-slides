@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<script src="02_Lecture_files/libs/clipboard/clipboard.min.js"></script>
-<script src="02_Lecture_files/libs/quarto-html/tabby.min.js"></script>
-<script src="02_Lecture_files/libs/quarto-html/popper.min.js"></script>
-<script src="02_Lecture_files/libs/quarto-html/tippy.umd.min.js"></script>
-<link href="02_Lecture_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="02_Lecture_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="02_Lecture_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<script src="02_Relations_files/libs/clipboard/clipboard.min.js"></script>
+<script src="02_Relations_files/libs/quarto-html/tabby.min.js"></script>
+<script src="02_Relations_files/libs/quarto-html/popper.min.js"></script>
+<script src="02_Relations_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="02_Relations_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="02_Relations_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
+<link href="02_Relations_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.1.251">
 
   <meta name="author" content="Самсонов Тимофей Евгеньевич">
@@ -14,8 +14,8 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="02_Lecture_files/libs/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="02_Lecture_files/libs/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="02_Relations_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="02_Relations_files/libs/revealjs/dist/reveal.css">
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -48,11 +48,11 @@
       margin-left: 2em;
     }
   </style>
-  <link rel="stylesheet" href="02_Lecture_files/libs/revealjs/dist/theme/quarto.css" id="theme">
-  <link href="02_Lecture_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-  <link href="02_Lecture_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-  <link href="02_Lecture_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="02_Lecture_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <link rel="stylesheet" href="02_Relations_files/libs/revealjs/dist/theme/quarto.css" id="theme">
+  <link href="02_Relations_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="02_Relations_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="02_Relations_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="02_Relations_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
 
   .callout {
@@ -390,13 +390,48 @@
 <dl>
 <dt>Отношение</dt>
 <dd>
-<p>Связь между некоторой сущностью и тем, что с ней соотнесено</p>
+<p>Свойство двух или более объектов, выраженное в наличии или отсутствии определенной связи между ними.</p>
 </dd>
 <dt>Пространственное отношение</dt>
 <dd>
-<p>Отношение, в котором связь определяется пространственной привязкой объектов.</p>
+<p>Отношение пространственных объектов, значение которого зависит от их местоположения.</p>
 </dd>
 </dl>
+<div class="callout callout-note callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Предикат</strong></p>
+</div>
+<div class="callout-content">
+<p>Формальным представлением отношения является <strong>предикат</strong> — функция, определенная на множестве объектов и принимающая для их упорядоченного набора значение <strong>1</strong> (<code>ИСТИНА</code>) или <strong>0</strong> (<code>ЛОЖЬ</code>). Предикаты пространственных отношений называются пространственными.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="пространственные-отношения-1" class="slide level2">
+<h2>Пространственные отношения</h2>
+<p>К основным видам топологических отношений относятся:</p>
+<ol type="1">
+<li><p><strong>Метрические</strong> — определяются расстояниями между объектами.</p></li>
+<li><p><strong>Топологические</strong> — определяются пересечениями объектов.</p></li>
+<li><p><strong>Дирекционные</strong> — определяются направлениями между объектами</p></li>
+</ol>
+<div class="callout callout-note callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Пространственные предикаты</strong></p>
+</div>
+<div class="callout-content">
+<p>Функции, которые устанавливают наличие метрических, топологических и дирекционных отношений, являются пространственными предикатами.</p>
+</div>
+</div>
+</div>
 </section>
 <section id="библиография" class="slide level2 smaller scrollable">
 <h2>Библиография</h2>
@@ -413,19 +448,19 @@
   </div>
 
   <script>window.backupDefine = window.define; window.define = undefined;</script>
-  <script src="02_Lecture_files/libs/revealjs/dist/reveal.js"></script>
+  <script src="02_Relations_files/libs/revealjs/dist/reveal.js"></script>
   <!-- reveal.js plugins -->
-  <script src="02_Lecture_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
-  <script src="02_Lecture_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
-  <script src="02_Lecture_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
-  <script src="02_Lecture_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="02_Lecture_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  <script src="02_Relations_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="02_Relations_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="02_Relations_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="02_Relations_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="02_Relations_files/libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
-  <script src="02_Lecture_files/libs/revealjs/plugin/notes/notes.js"></script>
-  <script src="02_Lecture_files/libs/revealjs/plugin/search/search.js"></script>
-  <script src="02_Lecture_files/libs/revealjs/plugin/zoom/zoom.js"></script>
-  <script src="02_Lecture_files/libs/revealjs/plugin/math/math.js"></script>
+  <script src="02_Relations_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="02_Relations_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="02_Relations_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="02_Relations_files/libs/revealjs/plugin/math/math.js"></script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
 
   <script>
