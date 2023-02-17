@@ -337,6 +337,9 @@
       margin-right: 0; 
     }
   </style>
+  <script src="02_Relations_files/libs/quarto-diagram/mermaid.min.js"></script>
+  <script src="02_Relations_files/libs/quarto-diagram/mermaid-init.js"></script>
+  <link href="02_Relations_files/libs/quarto-diagram/mermaid.css" rel="stylesheet">
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -344,47 +347,11 @@
 
 <section id="title-slide" class="center">
   <h1 class="title">Основы геоинформатики</h1>
-  <p class="subtitle">Лекция 2: Пространственные отношения</p>
+  <p class="subtitle">Лекция 2: Создание объектов и пространственные отношения</p>
   <p class="author">Самсонов Тимофей Евгеньевич</p>
   <p class="date">10.02.2023</p>
 </section>
 
-<section id="пространственная-привязка" class="slide level2">
-<h2>Пространственная привязка</h2>
-<dl>
-<dt><strong>Пространственная привязка <span class="citation" data-cites="gost:70316-2022">(<a href="#/библиография" role="doc-biblioref" onclick="">ГОСТ Р 70316-2022 (ИСО 19112:2019) 2022</a>)</span></strong></dt>
-<dd>
-<p>Описание позиции в реальном мире.</p>
-</dd>
-</dl>
-<p>Пространственная привязка может быть осуществлена двумя основными способами:</p>
-<ul>
-<li>с использованием координат;</li>
-<li><strong>посредством географических идентификаторов</strong>.</li>
-</ul>
-<div class="callout callout-important callout-captioned callout-style-default">
-<div class="callout-body">
-<div class="callout-caption">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Система координат</strong></p>
-</div>
-<div class="callout-content">
-<p>При использовании привязки по координатам необходимо описание системы координат.</p>
-</div>
-</div>
-</div>
-</section>
-<section id="географические-идентификаторы" class="slide level2">
-<h2>Географические идентификаторы</h2>
-<p>Увязаны с местоположением, идентифицируемым географическими объектами. Взаимосвязь с объектом может быть установлена следующими основными способами:</p>
-<ul>
-<li><p><strong>локализацией</strong>, когда конкретная позиция находится внутри географического объекта, например в стране;</p></li>
-<li><p><strong>локальными измерениями</strong>, когда позиция определена относительно фиксированных точек географических объектов, например вдоль улицы на заданном расстоянии от пересечения с другой улицей. Этот аспект известен как <em>линейная привязка</em>;</p></li>
-<li><p><strong>слабо связанным способом</strong>, когда позиция имеет нечеткую взаимосвязь с географическими объектами, например рядом со зданием или между двумя зданиями.</p></li>
-</ul>
-</section>
 <section id="создание-объектов" class="slide level2">
 <h2>Создание объектов</h2>
 <p>Создание векторных пространственных объектов осуществляется разными способами. Наиболее распространены:</p>
@@ -407,6 +374,155 @@
 </div></li>
 <li><p><strong>Геометрические операции</strong> — получение новых векторных объектов в результате операций над существующими объектами.</p></li>
 </ol>
+</section>
+<section id="автоматическое-конструирование" class="slide level2">
+<h2>Автоматическое конструирование</h2>
+<h4 id="маршрут-линейный-объект">Маршрут — линейный объект</h4>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Исходные данные</strong></p>
+<p><img data-src="images/image-11396456.png"></p>
+<p><img data-src="images/image-1313555464.png"></p>
+</div><div class="column" style="width:50%;">
+<p><strong>Simple Feature</strong></p>
+<pre><code>Geometry set for 1 feature 
+Geometry type: LINESTRING
+Dimension:     XY
+Bounding box:  xmin: 36.34891 ymin: 55.19607 xmax: 36.38429 ymax: 55.21918
+Geodetic CRS:  WGS 84
+LINESTRING (36.38314 55.20975, 36.38314 55.20976, 36.3832 55.20997, 36.38321 55.21001, 36.38321 55.21002, 36.38325 55.21007...</code></pre>
+</div>
+</div>
+</section>
+<section id="автоматическое-конструирование-1" class="slide level2">
+<h2>Автоматическое конструирование</h2>
+<h4 id="поле-площадной-объект">Поле — площадной объект</h4>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Исходные данные</strong></p>
+<p><img data-src="images/image-587177276.png"></p>
+<p><img data-src="images/image-635340267.png"></p>
+</div><div class="column" style="width:50%;">
+<p><strong>Simple Feature</strong></p>
+<pre><code>Geometry set for 1 feature 
+Geometry type: POLYGON
+Dimension:     XY
+Bounding box:  xmin: 36.37781 ymin: 55.18984 xmax: 36.38543 ymax: 55.19887
+Geodetic CRS:  WGS 84
+POLYGON ((36.38543 55.19842, 36.38538 55.19825, 36.38533 55.19806, 36.38528 55.19785, 36.38525 55.19763, 36.38513 55.19745,...</code></pre>
+</div>
+</div>
+</section>
+<section id="автоматическое-конструирование-2" class="slide level2">
+<h2>Автоматическое конструирование</h2>
+<h4 id="геодезические-пункты-точечные-объекты">Геодезические пункты — точечные объекты</h4>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Исходные данные</strong></p>
+<p><img data-src="images/image-1928425450.png"></p>
+</div><div class="column" style="width:50%;">
+<p><strong>Simple Feature</strong></p>
+<pre style="font-size: 8"><code>Simple feature collection with 2 features and 2 fields
+Geometry type: POINT
+Dimension:     XY
+Bounding box:  xmin: 36.34953 ymin: 55.19612 xmax: 36.37369 ymax: 55.2188
+Geodetic CRS:  WGS 84
+N Name    geometry
+  &lt;chr&gt;   &lt;POINT [°]&gt;
+1 Африка  (36.34953 55.19612)
+2 Сенокос (36.37369 55.2188)</code></pre>
+</div>
+</div>
+</section>
+<section id="автоматическое-конструирование-3" class="slide level2">
+<h2>Автоматическое конструирование</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p><img data-src="images/field_map.png"></p>
+</div><div class="column" style="width:40%;">
+<p>Пример использования — построение карт по результатам полевых работ.</p>
+<div class="callout callout-caution callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Ограничения</strong></p>
+</div>
+<div class="callout-content">
+<p>Сырые данные ГНСС-измерений содержат погрешности. Поэтому векторные объекты, созданные на их основе, часто нуждаются в редактировании, в том числе с использованием геометрических операций.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="географические-идентификаторы" class="slide level2">
+<h2>Географические идентификаторы</h2>
+<p>Увязаны с местоположением, идентифицируемым географическими объектами. Взаимосвязь с объектом может быть установлена следующими основными способами:</p>
+<ul>
+<li><p><strong>локализацией</strong>, когда конкретная позиция находится внутри географического объекта, например в стране;</p></li>
+<li><p><strong>локальными измерениями</strong>, когда позиция определена относительно фиксированных точек географических объектов, например вдоль улицы на заданном расстоянии от пересечения с другой улицей. Этот аспект известен как <em>линейная привязка</em>;</p></li>
+<li><p><strong>слабо связанным способом</strong>, когда позиция имеет нечеткую взаимосвязь с географическими объектами, например рядом со зданием или между двумя зданиями.</p></li>
+</ul>
+</section>
+<section id="геокодирование" class="slide level2">
+<h2>Геокодирование</h2>
+<dl>
+<dt>Географический идентификатор <span class="citation" data-cites="gost:70316-2022">(<a href="#/библиография" role="doc-biblioref" onclick="">ГОСТ Р 70316-2022 (ИСО 19112:2019) 2022</a>)</span></dt>
+<dd>
+<p>Пространственная привязка в виде текстового обозначения или кода, определяющего местоположение</p>
+</dd>
+<dt>Географический справочник (газеттир)</dt>
+<dd>
+<p>Реестр экземпляров местоположений одного или более подтипов местоположений, содержащих некоторую информацию о позиции.</p>
+</dd>
+</dl>
+<div class="callout callout-note callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Адресный локатор</strong></p>
+</div>
+<div class="callout-content">
+<p>Географический справочник почтовых адресов и их местоположения обычно называют <em>адресным локатором</em>.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="адресное-геокодирование" class="slide level2">
+<h2>Адресное геокодирование</h2>
+<div class="cell" data-reveal="true" data-fig-width="11">
+<div class="cell-output-display">
+<div>
+<p>
+</p><pre class="mermaid" data-tooltip-selector="#mermaid-tooltip-1">flowchart LR
+  A(Адрес) --&gt; B(Геокодер)
+  C(Адресный локатор) --&gt; B
+  B --&gt; D(Координаты)
+</pre>
+<div id="mermaid-tooltip-1" class="mermaidTooltip">
+
+</div>
+<p></p>
+</div>
+</div>
+</div>
+<p><strong>Адресный локатор</strong> хранит набор набор векторных объектов, для каждого из которых задано структурированное описание адреса, разбитое на компоненты: индекс, регион, нас. пункт, улица и т.д.</p>
+<p><strong>Геокодер</strong> находит в локаторе наиболее вероятное местоположение, соответствующее переданному адресу.</p>
+</section>
+<section id="адресное-геокодирование-1" class="slide level2">
+<h2>Адресное геокодирование</h2>
+<p>Адресное геокодирование позволяет автоматизировать преобразование текстовых данных в пространственные.</p>
+<div class="columns">
+<div class="column" style="width:45%;">
+<p><img data-src="images/addr_source.png" style="width:100.0%"></p>
+</div><div class="column" style="width:55%;">
+<p><img data-src="images/addr_res.png" style="width:100.0%"></p>
+</div>
+</div>
 </section>
 <section id="пространственные-отношения" class="slide level2">
 <h2>Пространственные отношения</h2>
@@ -964,9 +1080,6 @@ A^- \cap B^o \ne \emptyset    &amp;    A^- \cap \partial{B} \ne \emptyset   &amp
 <p><img data-src="images/dir_proj.svg" style="width:100.0%"></p>
 </div>
 </div>
-</section>
-<section id="section" class="slide level2">
-<h2></h2>
 </section>
 <section id="библиография" class="slide level2 smaller scrollable">
 <h2>Библиография</h2>
