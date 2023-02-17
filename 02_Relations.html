@@ -385,6 +385,29 @@
 <li><p><strong>слабо связанным способом</strong>, когда позиция имеет нечеткую взаимосвязь с географическими объектами, например рядом со зданием или между двумя зданиями.</p></li>
 </ul>
 </section>
+<section id="создание-объектов" class="slide level2">
+<h2>Создание объектов</h2>
+<p>Создание векторных пространственных объектов осуществляется разными способами. Наиболее распространены:</p>
+<ol type="1">
+<li><p><strong>Автоматическое конструирование</strong> на основе координат.</p></li>
+<li><p><strong>Геокодирование</strong> — преобразование географических идентификаторов в координаты.</p></li>
+<li><p><strong>Векторизация</strong> — создание объектов в ручном режиме, либо путем преобразования из других моделей данных.</p>
+<div class="callout callout-tip callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Уточнение</strong></p>
+</div>
+<div class="callout-content">
+<p>Векторизации-преобразованию обычно подвергаются растровые данные.</p>
+</div>
+</div>
+</div></li>
+<li><p><strong>Геометрические операции</strong> — получение новых векторных объектов в результате операций над существующими объектами.</p></li>
+</ol>
+</section>
 <section id="пространственные-отношения" class="slide level2">
 <h2>Пространственные отношения</h2>
 <dl>
@@ -549,8 +572,35 @@ d(A,B) = \\ \arccos (
 </section>
 <section id="топологические-отношения" class="slide level2">
 <h2>Топологические отношения</h2>
+<p>Топологические отношения можно описать в терминах пересечения трех областей каждого объекта <span class="citation" data-cites="egenhofer1991">(<a href="#/библиография" role="doc-biblioref" onclick="">Egenhofer 1991</a>)</span>:</p>
 <div class="columns">
-<div class="column" style="width:50%;">
+<div class="column" style="width:40%;">
+<ul>
+<li><p>Внутренняя область (<span class="math inline">\(A^o\)</span>)</p></li>
+<li><p>Граница (<span class="math inline">\(\partial A\)</span>)</p></li>
+<li><p>Внешняя область (<span class="math inline">\(A^-\)</span>)</p></li>
+</ul>
+</div><div class="column" style="width:60%;">
+<div class="quarto-figure quarto-figure-left">
+<figure>
+<p><img data-src="images/egenhofer.svg" style="width:70.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Матрица Эгенхофера <strong>9-IM</strong> содержит 0 или 1 в зависимости от наличия или отсутствия пересечения:</p>
+<p><span class="math display">\[
+\begin{bmatrix}
+A^o  \cap B^o \ne \emptyset   &amp;   A^o \cap \partial{B} \ne \emptyset &amp; A^o \cap B^- \ne \emptyset \\
+\partial{A} \cap B^o \ne \emptyset   &amp;    \partial{A} \cap \partial{B} \ne \emptyset  &amp;  \partial{A} \cap B^- \ne \emptyset \\
+A^- \cap B^o \ne \emptyset    &amp;    A^- \cap \partial{B} \ne \emptyset   &amp;   A^-  \cap B^- \ne \emptyset
+\end{bmatrix}
+\]</span></p>
+</section>
+<section id="топологические-отношения-1" class="slide level2">
+<h2>Топологические отношения</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
 <dl>
 <dt>Не пересекает</dt>
 <dd>
@@ -577,15 +627,15 @@ d(A,B) = \\ \arccos (
 </div>
 </div>
 </div>
-</div><div class="column" style="width:50%;">
+</div><div class="column" style="width:40%;">
 <p><img data-src="images/topo_disjoint.svg" style="width:70.0%"></p>
 </div>
 </div>
 </section>
-<section id="топологические-отношения-1" class="slide level2">
+<section id="топологические-отношения-2" class="slide level2">
 <h2>Топологические отношения</h2>
 <div class="columns">
-<div class="column" style="width:50%;">
+<div class="column" style="width:60%;">
 <dl>
 <dt>Равен</dt>
 <dd>
@@ -612,15 +662,15 @@ d(A,B) = \\ \arccos (
 </div>
 </div>
 </div>
-</div><div class="column" style="width:50%;">
+</div><div class="column" style="width:40%;">
 <p><img data-src="images/topo_equals.svg" style="width:70.0%"></p>
 </div>
 </div>
 </section>
-<section id="топологические-отношения-2" class="slide level2">
+<section id="топологические-отношения-3" class="slide level2">
 <h2>Топологические отношения</h2>
 <div class="columns">
-<div class="column" style="width:50%;">
+<div class="column" style="width:60%;">
 <dl>
 <dt>Перекрывает</dt>
 <dd>
@@ -647,15 +697,15 @@ d(A,B) = \\ \arccos (
 </div>
 </div>
 </div>
-</div><div class="column" style="width:50%;">
+</div><div class="column" style="width:40%;">
 <p><img data-src="images/topo_overlaps.svg" style="width:70.0%"></p>
 </div>
 </div>
 </section>
-<section id="топологические-отношения-3" class="slide level2">
+<section id="топологические-отношения-4" class="slide level2">
 <h2>Топологические отношения</h2>
 <div class="columns">
-<div class="column" style="width:50%;">
+<div class="column" style="width:60%;">
 <dl>
 <dt>Касается</dt>
 <dd>
@@ -682,15 +732,15 @@ d(A,B) = \\ \arccos (
 </div>
 </div>
 </div>
-</div><div class="column" style="width:50%;">
+</div><div class="column" style="width:40%;">
 <p><img data-src="images/topo_touches.svg" style="width:70.0%"></p>
 </div>
 </div>
 </section>
-<section id="топологические-отношения-4" class="slide level2">
+<section id="топологические-отношения-5" class="slide level2">
 <h2>Топологические отношения</h2>
 <div class="columns">
-<div class="column" style="width:50%;">
+<div class="column" style="width:60%;">
 <dl>
 <dt>Покрывает</dt>
 <dd>
@@ -717,15 +767,15 @@ d(A,B) = \\ \arccos (
 </div>
 </div>
 </div>
-</div><div class="column" style="width:50%;">
+</div><div class="column" style="width:40%;">
 <p><img data-src="images/topo_covers.svg" style="width:70.0%"></p>
 </div>
 </div>
 </section>
-<section id="топологические-отношения-5" class="slide level2">
+<section id="топологические-отношения-6" class="slide level2">
 <h2>Топологические отношения</h2>
 <div class="columns">
-<div class="column" style="width:50%;">
+<div class="column" style="width:60%;">
 <dl>
 <dt>Покрыт</dt>
 <dd>
@@ -752,15 +802,15 @@ d(A,B) = \\ \arccos (
 </div>
 </div>
 </div>
-</div><div class="column" style="width:50%;">
+</div><div class="column" style="width:40%;">
 <p><img data-src="images/topo_covered.svg" style="width:70.0%"></p>
 </div>
 </div>
 </section>
-<section id="топологические-отношения-6" class="slide level2">
+<section id="топологические-отношения-7" class="slide level2">
 <h2>Топологические отношения</h2>
 <div class="columns">
-<div class="column" style="width:50%;">
+<div class="column" style="width:60%;">
 <dl>
 <dt>Содержит</dt>
 <dd>
@@ -787,15 +837,15 @@ d(A,B) = \\ \arccos (
 </div>
 </div>
 </div>
-</div><div class="column" style="width:50%;">
+</div><div class="column" style="width:40%;">
 <p><img data-src="images/topo_contains.svg" style="width:80.0%"></p>
 </div>
 </div>
 </section>
-<section id="топологические-отношения-7" class="slide level2">
+<section id="топологические-отношения-8" class="slide level2">
 <h2>Топологические отношения</h2>
 <div class="columns">
-<div class="column" style="width:50%;">
+<div class="column" style="width:60%;">
 <dl>
 <dt>Внутри</dt>
 <dd>
@@ -822,12 +872,12 @@ d(A,B) = \\ \arccos (
 </div>
 </div>
 </div>
-</div><div class="column" style="width:50%;">
+</div><div class="column" style="width:40%;">
 <p><img data-src="images/topo_within.svg" style="width:70.0%"></p>
 </div>
 </div>
 </section>
-<section id="топологические-отношения-8" class="slide level2">
+<section id="топологические-отношения-9" class="slide level2">
 <h2>Топологические отношения</h2>
 <dl>
 <dt>Пересекает</dt>
@@ -863,12 +913,70 @@ d(A,B) = \\ \arccos (
 </div>
 </div>
 </section>
+<section id="дирекционные-отношения-1" class="slide level2">
+<h2>Дирекционные отношения</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p><strong>Прямоугольная модель</strong> разделяет плоскость на 9 секторов относительно прямоугольника, ограничивающего объект.</p>
+<ul>
+<li>Используется минимальный ограничивающий прямоугольник со сторонами, параллельными осям координат.</li>
+</ul>
+<div class="callout callout-caution callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Ограничения</strong></p>
+</div>
+<div class="callout-content">
+<p>Дает качественную оценку направления по сторонам света</p>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:40%;">
+<p><img data-src="images/dir_mbr.svg" style="width:100.0%"></p>
+</div>
+</div>
+</section>
+<section id="дирекционные-отношения-2" class="slide level2">
+<h2>Дирекционные отношения</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Проективная модель</strong> используется для оценки направления на третий объект <strong>C</strong> относительно двух других объектов <strong>A</strong> и <strong>B</strong>.</p>
+<ul>
+<li>Плоскость делится на 4 “конуса”, а также область между объектами.</li>
+</ul>
+<div class="callout callout-caution callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Ограничения</strong></p>
+</div>
+<div class="callout-content">
+<p>Дает качественную оценку направления и применяется для <em>движущихся</em> объектов</p>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<p><img data-src="images/dir_proj.svg" style="width:100.0%"></p>
+</div>
+</div>
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+</section>
 <section id="библиография" class="slide level2 smaller scrollable">
 <h2>Библиография</h2>
 <div class="footer footer-default">
 
 </div>
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-egenhofer1991" class="csl-entry" role="doc-biblioentry">
+Egenhofer, Max J. 1991. <span>“Reasoning about Binary Topological Relations.”</span> In <em>Advances in Spatial Databases</em>, edited by Oliver Günther and Hans-Jörg Schek, 141–60. Berlin, Heidelberg: Springer Berlin Heidelberg.
+</div>
 <div id="ref-gost:70316-2022" class="csl-entry" role="doc-biblioentry">
 ГОСТ Р 70316-2022 (ИСО 19112:2019). 2022. <span>“Пространственные данные. Пространственная привязка по географическим идентификаторам.”</span> Москва: Российский институт стандартизации. <a href="https://docs.cntd.ru/document/1200193002">https://docs.cntd.ru/document/1200193002</a>.
 </div>
