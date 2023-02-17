@@ -518,9 +518,89 @@ N Name    geometry
 <p>Адресное геокодирование позволяет автоматизировать преобразование текстовых данных в пространственные.</p>
 <div class="columns">
 <div class="column" style="width:45%;">
-<p><img data-src="images/addr_source.png" style="width:100.0%"></p>
+<p><strong>Исходные данные</strong></p>
+<p><img data-src="images/addr_source.png" style="width:90.0%"></p>
 </div><div class="column" style="width:55%;">
-<p><img data-src="images/addr_res.png" style="width:100.0%"></p>
+<p><strong>Результаты геокодирования</strong></p>
+<p><img data-src="images/addr_res.png" style="width:90.0%"></p>
+</div>
+</div>
+</section>
+<section id="векторизация" class="slide level2">
+<h2>Векторизация</h2>
+<p><strong>Векторизация</strong> может осуществляться в автоматическом, автоматизированном и ручном режиме.</p>
+<ul>
+<li><p><em>Автоматическая векторизация</em> используется, например, при конвертации покрытий, хранящих категориальные данные, в набор векторных объектов.</p>
+<p><img data-src="images/vectorize.svg" style="width:65.0%"></p></li>
+</ul>
+</section>
+<section id="векторизация-1" class="slide level2">
+<h2>Векторизация</h2>
+<p><strong>Векторизация</strong> может осуществляться в автоматическом, автоматизированном и ручном режиме.</p>
+<ul>
+<li><p><em>Автоматизированная векторизация</em> используется, например, при выделении объектов на космических снимках и сканированных картах. Результирующие объекты требуют редактирования.</p>
+<p><img data-src="images/image-91314596.png"></p>
+<p><span class="citation" data-cites="yurtseven2019">Yurtseven et al. (<a href="#/библиография" role="doc-biblioref" onclick="">2019</a>)</span></p></li>
+</ul>
+</section>
+<section id="векторизация-2" class="slide level2">
+<h2>Векторизация</h2>
+<p><strong>Векторизация</strong> может осуществляться в автоматическом, автоматизированном и ручном режиме.</p>
+<div class="columns">
+<div class="column" style="width:30%;">
+<p><img data-src="images/vec_manual_crop.gif"></p>
+</div><div class="column" style="width:70%;">
+<ul>
+<li><em>Ручная векторизация</em> используется, когда автоматизированные методы не дают удовлетворительного результата, или когда надо создать новый векторный объект, для которого нет образца.</li>
+</ul>
+<div class="callout callout-tip callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Операции редактирования</strong></p>
+</div>
+<div class="callout-content">
+<p>Ручная векторизация похожа на работу в векторных графических редакторах. Объекты можно не только создавать, но также разрезать, присоединять, вырезать в них дырки и т.д.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="цифрование" class="slide level2">
+<h2>Цифрование</h2>
+<dl>
+<dt>Цифрование</dt>
+<dd>
+<p>Получение цифрового представления объектов.</p>
+</dd>
+</dl>
+<div class="callout callout-tip callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Пример</strong></p>
+</div>
+<div class="callout-content">
+<p>Классические пример цифрования — получение растра топографической карты по результатам сканирования.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-warning callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Соотношение с векторизацией</strong></p>
+</div>
+<div class="callout-content">
+<p><strong>Цифрование</strong> — более общий термин, чем <em>векторизация</em>. Для обозначения процесса создания векторных объектов необходимо употреблять термин <em>векторизация</em>.</p>
+</div>
 </div>
 </div>
 </section>
@@ -533,7 +613,7 @@ N Name    geometry
 </dd>
 <dt>Пространственное отношение</dt>
 <dd>
-<p>Отношение пространственных объектов, значение которого зависит от их местоположения.</p>
+<p>Отношение пространственных объектов, которое зависит от их местоположения.</p>
 </dd>
 </dl>
 <div class="callout callout-note callout-captioned callout-style-default">
@@ -552,7 +632,7 @@ N Name    geometry
 </section>
 <section id="пространственные-отношения-1" class="slide level2">
 <h2>Пространственные отношения</h2>
-<p>К основным видам топологических отношений относятся:</p>
+<p>К основным видам пространственных отношений относятся:</p>
 <ol type="1">
 <li><p><strong>Метрические</strong> — определяются расстояниями между объектами.</p></li>
 <li><p><strong>Топологические</strong> — определяются пересечениями объектов.</p></li>
@@ -1081,6 +1161,41 @@ A^- \cap B^o \ne \emptyset    &amp;    A^- \cap \partial{B} \ne \emptyset   &amp
 </div>
 </div>
 </section>
+<section id="словарик" class="slide level2">
+<h2>Словарик</h2>
+<div class="columns">
+<div class="column" style="color: blue; text-align: end;">
+<p>Географический справочник</p>
+<p>Адресный локатор</p>
+<p>Геокодирование</p>
+<p>Векторизация</p>
+<p>Цифрование</p>
+<p>Пространственное отношение</p>
+<p>Евклидово расстояние</p>
+<p>Геодезическое расстояние</p>
+<p>Метрическое отношение</p>
+<p>Топологическое отношение</p>
+<p>Дирекционное отношение</p>
+</div><div class="column" style="color: red">
+<p>Gazetteer</p>
+<p>Address locator</p>
+<p>Geocoding</p>
+<p>Vectorization</p>
+<p>Digitizing</p>
+<p>Spatial relation</p>
+<p>Euclidean distance</p>
+<p>Geodesic distance</p>
+<p>Metric relation</p>
+<p>Topological relation</p>
+<p>Directional relation</p>
+</div>
+</div>
+</section>
+<section id="сайт-курса" class="slide level2">
+<h2>Сайт курса</h2>
+
+<img data-src="images/site.png" class="r-stretch"><p><a href="https://tsamsonov.github.io/gis-course/" class="uri">https://tsamsonov.github.io/gis-course/</a></p>
+</section>
 <section id="библиография" class="slide level2 smaller scrollable">
 <h2>Библиография</h2>
 <div class="footer footer-default">
@@ -1089,6 +1204,9 @@ A^- \cap B^o \ne \emptyset    &amp;    A^- \cap \partial{B} \ne \emptyset   &amp
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
 <div id="ref-egenhofer1991" class="csl-entry" role="doc-biblioentry">
 Egenhofer, Max J. 1991. <span>“Reasoning about Binary Topological Relations.”</span> In <em>Advances in Spatial Databases</em>, edited by Oliver Günther and Hans-Jörg Schek, 141–60. Berlin, Heidelberg: Springer Berlin Heidelberg.
+</div>
+<div id="ref-yurtseven2019" class="csl-entry" role="doc-biblioentry">
+Yurtseven, Huseyin, Mustafa Akgul, Suleyman Coban, and Sercan Gulci. 2019. <span>“Determination and Accuracy Analysis of Individual Tree Crown Parameters Using UAV Based Imagery and OBIA Techniques.”</span> <em>Measurement</em> 145 (October): 651–64. <a href="https://doi.org/10.1016/j.measurement.2019.05.092">https://doi.org/10.1016/j.measurement.2019.05.092</a>.
 </div>
 <div id="ref-gost:70316-2022" class="csl-entry" role="doc-biblioentry">
 ГОСТ Р 70316-2022 (ИСО 19112:2019). 2022. <span>“Пространственные данные. Пространственная привязка по географическим идентификаторам.”</span> Москва: Российский институт стандартизации. <a href="https://docs.cntd.ru/document/1200193002">https://docs.cntd.ru/document/1200193002</a>.
