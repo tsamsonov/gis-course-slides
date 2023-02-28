@@ -1,0 +1,22 @@
+---
+title: "Основы геоинформатики"
+subtitle: "Лекция 3: Базы пространственных данных"
+date: 03.03.2023
+author: "Самсонов Тимофей Евгеньевич"
+execute:
+  echo: false
+engine: knitr
+format:
+  revealjs: 
+    theme: [default, custom.scss]
+    slide-number: true
+    footer: "Самсонов Т. Е. Основы геоинформатики: курс лекций для студентов географического факультета МГУ"
+bibliography: references.yaml
+---
+
+## План лекции
+
+1.  Базы данных и уровни их проектирования
+2.  
+
+## Библиография
