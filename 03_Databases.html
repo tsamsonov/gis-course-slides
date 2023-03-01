@@ -332,13 +332,6 @@
 
 <section id="план-лекции" class="slide level2">
 <h2>План лекции</h2>
-<ol type="1">
-<li>Базы данных.</li>
-<li>Базы пространственных данных.</li>
-<li>Запросы к базам данных.</li>
-<li>Пространственные запросы</li>
-<li>Форматы хранения пространственных данных</li>
-</ol>
 </section>
 <section id="атрибутивные-операции" class="slide level2">
 <h2>Атрибутивные операции</h2>
@@ -395,6 +388,78 @@
 </div>
 <div class="callout-content">
 <p>Для выполнения интерполяции объекты (строки) необходимо упорядочить (по времени или другому атрибуту).</p>
+</div>
+</div>
+</div>
+</section>
+<section id="атрибутивные-операции-2" class="slide level2">
+<h2>Атрибутивные операции</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Классификация</strong> (реклассификация) используется для разделения значений на группы, определяемые номинальной или порядковой шкалой измерений.</p>
+<div class="callout callout-tip callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Пример</strong></p>
+</div>
+<div class="callout-content">
+<p>Классификация населенных пунктов по людности на основании численности населения.</p>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<p><img data-src="images/class.svg" style="width:100.0%"></p>
+</div>
+</div>
+<div class="callout callout-note callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Заметим, что</strong></p>
+</div>
+<div class="callout-content">
+<p>Не обязательно классифицировать числовой атрибут, можно также перевести одну классификацию в другую. Например, уменьшить число классов, объединив их в более крупные.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="атрибутивные-операции-3" class="slide level2">
+<h2>Атрибутивные операции</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Агрегирование</strong> используется для вычисления сводных значений для групп объектов.</p>
+<div class="callout callout-tip callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Пример</strong></p>
+</div>
+<div class="callout-content">
+<p>Вычисление средней доли лесопокрытой территории для водосборов, входящих в бассейны разных рек.</p>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<p><img data-src="images/aggr.svg" style="width:100.0%"></p>
+</div>
+</div>
+<div class="callout callout-important callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Важно</strong></p>
+</div>
+<div class="callout-content">
+<p>В процессе агрегирования происходит объединение геометрий объектов в мультигеометрии. При этом пересекающиеся объекты могут быть объединены в один с удалением общих границ,</p>
 </div>
 </div>
 </div>
