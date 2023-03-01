@@ -337,6 +337,9 @@
       margin-right: 0; 
     }
   </style>
+  <script src="03_Databases_files/libs/quarto-diagram/mermaid.min.js"></script>
+  <script src="03_Databases_files/libs/quarto-diagram/mermaid-init.js"></script>
+  <link href="03_Databases_files/libs/quarto-diagram/mermaid.css" rel="stylesheet">
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -368,6 +371,43 @@
 <div class="callout-content">
 <p>Не рекомендуются к использованию словосочетания: база геоданных, пространственная база данных, база данных ГИС</p>
 </div>
+</div>
+</div>
+</section>
+<section id="уровни-проектирования" class="slide level2">
+<h2>Уровни проектирования</h2>
+<div class="columns">
+<div class="column" style="width:10%;">
+<div class="cell" data-reveal="true" data-fig-width="1" data-fig-height="6">
+<div class="cell-output-display">
+<div>
+<p>
+</p><pre class="mermaid" data-tooltip-selector="#mermaid-tooltip-1">flowchart TB
+  A((1)) ---&gt; B((2))
+  B ---&gt; C((3))
+</pre>
+<div id="mermaid-tooltip-1" class="mermaidTooltip">
+
+</div>
+<p></p>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:90%;">
+<dl>
+<dt>Концептуальный</dt>
+<dd>
+<p>объекты реальности, их отношения и характеристики; модели пространственных данных; источники данных; пользовательские требования.</p>
+</dd>
+<dt>Логический</dt>
+<dd>
+<p>модель СУБД; cтруктура базы данных, ее разбиение на связанные элементы; атрибуты объектов и их типы данных.</p>
+</dd>
+<dt>Физический</dt>
+<dd>
+<p>фактическое представление данных в памяти компьютера; программное и аппаратное обеспечение</p>
+</dd>
+</dl>
 </div>
 </div>
 </section>
