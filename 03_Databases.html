@@ -28,6 +28,25 @@
       margin: 0 0.8em 0.2em -1.6em;
       vertical-align: middle;
     }
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+    }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
   </style>
   <link rel="stylesheet" href="03_Databases_files/libs/revealjs/dist/theme/quarto.css" id="theme">
   <link href="03_Databases_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -330,8 +349,27 @@
   <p class="date">03.03.2023</p>
 </section>
 
-<section id="план-лекции" class="slide level2">
-<h2>План лекции</h2>
+<section id="база-пространственных-данных" class="slide level2">
+<h2>База пространственных данных</h2>
+<dl>
+<dt>База пространственных данных <span class="citation" data-cites="gost:52438-2005">(<a href="#/библиография" role="doc-biblioref" onclick="">ГОСТ Р 52438-2005 2018</a>)</span></dt>
+<dd>
+<p>Совокупность пространственных данных, организованных по определенным правилам, устанавливающим общие принципы описания, хранения и манипулирования данными, предназначенная для удовлетворения информационных потребностей пользователя.</p>
+</dd>
+</dl>
+<div class="callout callout-warning callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Жаргон</strong></p>
+</div>
+<div class="callout-content">
+<p>Не рекомендуются к использованию словосочетания: база геоданных, пространственная база данных, база данных ГИС</p>
+</div>
+</div>
+</div>
 </section>
 <section id="атрибутивные-операции" class="slide level2">
 <h2>Атрибутивные операции</h2>
@@ -442,7 +480,7 @@
 <p><strong>Пример</strong></p>
 </div>
 <div class="callout-content">
-<p>Вычисление средней доли лесопокрытой территории для водосборов, входящих в бассейны разных рек.</p>
+<p>Вычисление средней крутизны склона для водосборов, входящих в бассейны разных рек.</p>
 </div>
 </div>
 </div>
@@ -459,12 +497,110 @@
 <p><strong>Важно</strong></p>
 </div>
 <div class="callout-content">
-<p>В процессе агрегирования происходит объединение геометрий объектов в мультигеометрии. При этом пересекающиеся объекты могут быть объединены в один с удалением общих границ,</p>
+<p>В процессе агрегирования происходит объединение геометрий объектов в <em>мультигеометрии</em>. При этом пересекающиеся в рамках одной мультигеометрии объекты могут быть объединены в один с удалением общих границ,</p>
 </div>
 </div>
 </div>
+</section>
+<section id="фильтрация" class="slide level2">
+<h2>Фильтрация</h2>
+<p><strong>Фильтрация</strong> используется чтобы оставить в данных только те объекты, атрибуты которых соответствуют заданным критериям.</p>
+
+<img data-src="images/filtering.svg" style="width:100.0%" class="r-stretch"><div class="callout callout-tip callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Пример</strong></p>
+</div>
+<div class="callout-content">
+<p>Оставить только лесные и степные фитоценозы с количеством осадков выше 500 мм в год</p>
+</div>
+</div>
+</div>
+</section>
+<section id="проекция" class="slide level2">
+<h2>Проекция</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Проекция</strong> используется чтобы оставить только нужные атрибуты объектов.</p>
+<div class="callout callout-tip callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Пример</strong></p>
+</div>
+<div class="callout-content">
+<p>Из всех атрибутов оставить только мощность осадков и номер отдела четвертичного периода.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-important callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Важно</strong></p>
+</div>
+<div class="callout-content">
+<p>Проекция приводит к изменению структуры таблицы</p>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<p><img data-src="images/selection.svg" style="width:100.0%"></p>
+</div>
+</div>
+</section>
+<section id="соединение" class="slide level2">
+<h2>Соединение</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Соединение</strong> используется чтобы объединить атрибуты соответствующих объектов из двух таблиц в одну.</p>
+<div class="callout callout-tip callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Пример</strong></p>
+</div>
+<div class="callout-content">
+<p>К данным по регионам присоединить статистику по промышленному производству.</p>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<p><img data-src="images/join.svg" style="width:100.0%"></p>
+</div>
+</div>
+<div class="callout callout-important callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Важно</strong></p>
+</div>
+<div class="callout-content">
+<p>Для определения соответствия необходимо указать <strong>ключевые поля</strong> — атрибуты, уникальным образом идентифицирующие объекты в обеих таблицах.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="библиография" class="slide level2 smaller scrollable">
+<h2>Библиография</h2>
 <div class="footer footer-default">
 <p>Самсонов Т. Е. Основы геоинформатики: курс лекций для студентов географического факультета МГУ</p>
+</div>
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-gost:52438-2005" class="csl-entry" role="doc-biblioentry">
+ГОСТ Р 52438-2005. 2018. <span>“Географические информационные системы. Термины и определения.”</span> Москва: Стандартинформ. <a href="https://docs.cntd.ru/document/1200044680">https://docs.cntd.ru/document/1200044680</a>.
+</div>
 </div>
 </section>
     </div>
