@@ -515,10 +515,10 @@
 <div class="column" style="width:60%;">
 <p><img data-src="images/relational_term.svg" style="width:100.0%"></p>
 </div><div class="column" style="width:40%;">
-<p><strong>Домен</strong> — допустимое множество значений атрибута.</p>
+<p><strong>Домен</strong> — допустимое множество значений.</p>
 <ul>
 <li><p>в широком смысле — <em>тип данных</em> атрибута: текст, целое число, действительное число, дата, геометрия и т.д;</p></li>
-<li><p>в узком смысле — конкретный <em>перечень</em> или <em>интервал</em> допустимых значений;</p></li>
+<li><p>в узком смысле — конкретный <em>перечень</em> или <em>интервал</em> значений;</p></li>
 </ul>
 </div>
 </div>
@@ -546,11 +546,99 @@
 </div>
 </div>
 </section>
+<section id="шкалы-измерений" class="slide level2">
+<h2>Шкалы измерений</h2>
+<p>Допустимое множество операций над атрибутом зависит не только от его домена, но также от <strong>шкалы измерения</strong>.</p>
+<table>
+<colgroup>
+<col style="width: 19%">
+<col style="width: 40%">
+<col style="width: 40%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Шкала</th>
+<th>Множество</th>
+<th>Отношение больше/меньше</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>номинальная</strong></td>
+<td>множество неупорядоченных элементов</td>
+<td>нельзя определить</td>
+</tr>
+<tr class="even">
+<td><strong>порядковая</strong></td>
+<td>множество упорядоченных элементов</td>
+<td>да/нет</td>
+</tr>
+<tr class="odd">
+<td><strong>интервальная</strong></td>
+<td>множество с заданным расстоянием</td>
+<td>насколько больше/меньше</td>
+</tr>
+<tr class="even">
+<td><strong>относительная</strong></td>
+<td>множество с заданным расстоянием и абсолютным нулём</td>
+<td>во сколько раз больше/меньше</td>
+</tr>
+</tbody>
+</table>
+</section>
 <section id="геореляционная-бд" class="slide level2">
 <h2>Геореляционная БД</h2>
 <p><strong>Геореляционной</strong> называется реляционная база данных с поддержкой геометрических доменов значений.</p>
 
-<img data-src="images/georelational.svg" style="width:100.0%" class="r-stretch quarto-figure-left"><p class="caption">Полярные арктические метеостанции</p></section>
+<img data-src="images/georelational.svg" style="width:100.0%" class="r-stretch quarto-figure-left"><div class="callout callout-note callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Пространственный объект</strong></p>
+</div>
+<div class="callout-content">
+<p>В геореляционных БД один кортеж соответствует одному пространственному объекту.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="отношение-геометрии-и-атрибутов" class="slide level2">
+<h2>Отношение геометрии и атрибутов</h2>
+<p>В геореляционных базах данных допустимое множество операций над атрибутом также зависит от того как он получен относительно пространства.</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="callout callout-note callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Экстенсивные атрибуты</strong></p>
+</div>
+<div class="callout-content">
+<p>Получены путем суммирования по пространству</p>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="callout callout-note callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Интенсивные атрибуты</strong></p>
+</div>
+<div class="callout-content">
+<p>Получены путем осреднения по пространству</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
 <section id="уровни-проектирования" class="slide level2">
 <h2>Уровни проектирования</h2>
 <div class="columns">
@@ -592,7 +680,7 @@
 <h2>Требования к базе данных</h2>
 <p>База пространственных данных должна быть:</p>
 <ul>
-<li><p><strong>согласованной по времени</strong>&nbsp;– хранящиеся в ней количественные данные должны соответствовать определенному времени, быть актуальными;</p></li>
+<li><p><strong>согласованной по времени</strong> – данные должны соответствовать определенному времени, быть актуальными;</p></li>
 <li><p><strong>полной</strong>, достаточно подробной для предполагаемых целей анализа и моделирования;</p></li>
 <li><p><strong>позиционно точной</strong>, абсолютно совместимой с другими данными, которые могут добавляться в нее;</p></li>
 <li><p><strong>достоверной</strong>, правильно отражающей характер явлений посредством атрибутов;</p></li>
@@ -613,8 +701,36 @@
 <li><p><em>управление хранением</em> данных во внешней (дисковой) и оперативной памяти;</p></li>
 <li><p><em>выполнение транзакций</em> — последовательностей процедур;</p></li>
 <li><p><em>обеспечение надежности</em> — способности восстанавливать состояние БД после аппаратного или программного сбоя</p></li>
-<li><p><em>поддержка специального языка</em> управления БД;</p></li>
+<li><p><em>поддержка специального языка</em> управления БД.</p></li>
 </ul>
+</section>
+<section id="транзакция" class="slide level2">
+<h2>Транзакция</h2>
+<dl>
+<dt>Транзакция</dt>
+<dd>
+<p>Неделимая с точки зрения воздействия на БД последовательность операций манипулирования данными</p>
+</dd>
+</dl>
+<div class="callout callout-tip callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Примеры</strong></p>
+</div>
+<div class="callout-content">
+<p>Примерами транзакций могут служить:</p>
+<ul>
+<li><p>чтение данных;</p></li>
+<li><p>преобразование отдельных единиц данных;</p></li>
+<li><p>добавление или удаление кортежей (записей);</p></li>
+<li><p>изменение логической схемы данных — например, добавление новых атрибутов или отношений.</p></li>
+</ul>
+</div>
+</div>
+</div>
 </section>
 <section id="атрибутивные-операции" class="slide level2">
 <h2>Атрибутивные операции</h2>
@@ -678,7 +794,7 @@
 <section id="атрибутивные-операции-2" class="slide level2">
 <h2>Атрибутивные операции</h2>
 <div class="columns">
-<div class="column" style="width:50%;">
+<div class="column" style="width:60%;">
 <p><strong>Классификация</strong> (реклассификация) используется для разделения значений на группы, определяемые номинальной или порядковой шкалой измерений.</p>
 <div class="callout callout-tip callout-captioned callout-style-default">
 <div class="callout-body">
@@ -693,7 +809,7 @@
 </div>
 </div>
 </div>
-</div><div class="column" style="width:50%;">
+</div><div class="column" style="width:40%;">
 <p><img data-src="images/class.svg" style="width:100.0%"></p>
 </div>
 </div>
@@ -749,7 +865,7 @@
 </section>
 <section id="фильтрация" class="slide level2">
 <h2>Фильтрация</h2>
-<p><strong>Фильтрация</strong> используется чтобы оставить в данных только те объекты, атрибуты которых соответствуют заданным критериям.</p>
+<p><strong>Фильтрация</strong> используется чтобы оставить в данных только те кортежи, атрибуты которых соответствуют заданным критериям.</p>
 
 <img data-src="images/filtering.svg" style="width:100.0%" class="r-stretch"><div class="callout callout-tip callout-captioned callout-style-default">
 <div class="callout-body">
