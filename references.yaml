@@ -169,4 +169,17 @@ references:
   type: article-journal
   URL: "https://linkinghub.elsevier.com/retrieve/pii/S0263224119305421"
   volume: 145
+- id: gost:10032-2007
+  author:
+  - family: ГОСТ Р ИСО МЭК ТО 10032-2007
+  issued: 2009
+  key: 7I2E26KA
+  libraryID: 2
+  note: "Citation Key: gost:10032-2007"
+  page: 45
+  providerKey: Zotero
+  publisher: Стандартинформ
+  publisher-place: Москва
+  title: Эталонная модель управления данными
+  type: report
 ...
