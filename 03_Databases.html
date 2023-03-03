@@ -551,9 +551,9 @@
 <p>Допустимое множество операций над атрибутом зависит не только от его домена, но также от <strong>шкалы измерения</strong>.</p>
 <table>
 <colgroup>
-<col style="width: 19%">
-<col style="width: 40%">
-<col style="width: 40%">
+<col style="width: 23%">
+<col style="width: 38%">
+<col style="width: 38%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -607,6 +607,7 @@
 <section id="отношение-геометрии-и-атрибутов" class="slide level2">
 <h2>Отношение геометрии и атрибутов</h2>
 <p>В геореляционных базах данных допустимое множество операций над атрибутом также зависит от того как он получен относительно пространства.</p>
+<p><strong>Опора измерений</strong> — физический объем, подвергнутый измерению.</p>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="callout callout-note callout-captioned callout-style-default">
@@ -618,7 +619,20 @@
 <p><strong>Экстенсивные атрибуты</strong></p>
 </div>
 <div class="callout-content">
-<p>Получены путем суммирования по пространству</p>
+<p>Пропорциональны опоре измерений. Суммируются при объединении территорий и делятся при разделении.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-tip callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Пример</strong></p>
+</div>
+<div class="callout-content">
+<p>Численность населения</p>
 </div>
 </div>
 </div>
@@ -632,7 +646,20 @@
 <p><strong>Интенсивные атрибуты</strong></p>
 </div>
 <div class="callout-content">
-<p>Получены путем осреднения по пространству</p>
+<p>Не пропорциональны опоре измерений. Осредняются при объединении территорий и остаются прежними при разделении.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-tip callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Пример</strong></p>
+</div>
+<div class="callout-content">
+<p>Плотность населения</p>
 </div>
 </div>
 </div>
