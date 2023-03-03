@@ -551,8 +551,8 @@
 <p>Допустимое множество операций над атрибутом зависит не только от его домена, но также от <strong>шкалы измерения</strong>.</p>
 <table>
 <colgroup>
-<col style="width: 23%">
-<col style="width: 38%">
+<col style="width: 19%">
+<col style="width: 42%">
 <col style="width: 38%">
 </colgroup>
 <thead>
@@ -565,22 +565,22 @@
 <tbody>
 <tr class="odd">
 <td><strong>номинальная</strong></td>
-<td>множество неупорядоченных элементов</td>
+<td>неупорядоченные элементы</td>
 <td>нельзя определить</td>
 </tr>
 <tr class="even">
 <td><strong>порядковая</strong></td>
-<td>множество упорядоченных элементов</td>
+<td>упорядоченные элементы</td>
 <td>да/нет</td>
 </tr>
 <tr class="odd">
 <td><strong>интервальная</strong></td>
-<td>множество с заданным расстоянием</td>
+<td>с заданным расстоянием</td>
 <td>насколько больше/меньше</td>
 </tr>
 <tr class="even">
 <td><strong>относительная</strong></td>
-<td>множество с заданным расстоянием и абсолютным нулём</td>
+<td>с заданным расстоянием и абсолютным нулём</td>
 <td>во сколько раз больше/меньше</td>
 </tr>
 </tbody>
@@ -965,6 +965,99 @@
 </div>
 </div>
 </div>
+</section>
+<section id="sql" class="slide level2">
+<h2>SQL</h2>
+<p><strong>Structured Query Language (SQL)</strong> — язык структурированных запросов. Применяется для создания, модификации и управления данными в реляционной базе данных.</p>
+<p>SQL используется для выполнения <em>атрибутивных</em> запросов.</p>
+<p>Простейшая форма запроса — <strong>проекция</strong>:</p>
+<p><strong><code>SELECT</code></strong> <em>&lt;атрибуты&gt;</em> <strong><code>FROM</code></strong> <em>&lt;отношение&gt;</em></p>
+<div class="callout callout-tip callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Примеры</strong></p>
+</div>
+<div class="callout-content">
+<p>Получить таблицу метеостанций целиком (<code>*</code>):</p>
+<p><strong><code>SELECT</code></strong> <code>*</code> <strong><code>FROM</code></strong> <code>stations</code></p>
+<p>Получить только столбцы идентификатора и имени метеостанции:</p>
+<p><strong><code>SELECT</code></strong> <code>id,name</code> <strong><code>FROM</code></strong> <code>stations</code></p>
+</div>
+</div>
+</div>
+</section>
+<section id="sql-1" class="slide level2">
+<h2>SQL</h2>
+<p>Для выполнения <strong>фильтрации</strong> запрос расширяется:</p>
+<p><strong><code>SELECT</code></strong> <em>&lt;атрибуты&gt;</em> <strong><code>FROM</code></strong> <em>&lt;отношение&gt;</em> <strong><code>WHERE</code></strong> <em>&lt;условия&gt;</em></p>
+<ul>
+<li>Несколько условий часто объединяются <code>AND</code> (<em>и</em>) и <code>OR</code> (<em>или</em>).</li>
+</ul>
+<div class="callout callout-tip callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Примеры</strong></p>
+</div>
+<div class="callout-content">
+<p>Все метеостанции на Шпицбергене (<code>tid = 3</code>):</p>
+<p><strong><code>SELECT</code></strong> <code>*</code> <strong><code>FROM</code></strong> <code>stations</code> <strong><code>WHERE</code></strong> <code>tid = 3</code></p>
+<p>Все метеостанции на Шпицбергене, либо основанные до 1950 года:</p>
+<p><strong><code>SELECT</code></strong> <code>*</code> <strong><code>FROM</code></strong> <code>stations</code> <strong><code>WHERE</code></strong> <code>tid = 3 OR year &lt; 1950</code></p>
+<p>Идентификатор и имя станций на Шпицбергене, не принадлежащих Норвегии (<code>oid &lt;&gt; 2</code>):</p>
+<p><strong><code>SELECT</code></strong> <code>id,name</code> <strong><code>FROM</code></strong> <code>stations</code> <strong><code>WHERE</code></strong> <code>tid = 3</code> <code>AND</code> <code>oid &lt;&gt; 2</code></p>
+</div>
+</div>
+</div>
+</section>
+<section id="sql-2" class="slide level2">
+<h2>SQL</h2>
+<ul>
+<li><p><strong>Проверить на вхождение в множество</strong> можно через <code>IN()</code></p></li>
+<li><p><strong>Инвертировать</strong> условие можно через <code>NOT</code>.</p></li>
+<li><p><strong>Проверить пустоту</strong> можно через <code>IS NULL</code> .</p></li>
+</ul>
+<div class="callout callout-tip callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Примеры</strong></p>
+</div>
+<div class="callout-content">
+<p>Все метеостанции на Шпицбергене или в Гренландии:</p>
+<p><strong><code>SELECT</code></strong> <code>*</code> <strong><code>FROM</code></strong> <code>stations</code> <strong><code>WHERE</code></strong> <code>tid IN (0, 3)</code></p>
+<p>Все метеостанции не на Шпицбергене, и не в Гренландии</p>
+<p><strong><code>SELECT</code></strong> <code>*</code> <strong><code>FROM</code></strong> <code>stations</code> <strong><code>WHERE</code></strong> <code>tid NOT IN (0, 3)</code></p>
+<p>Все метеостанции, у которых не указана территория:</p>
+<p><strong><code>SELECT</code></strong> <code>*</code> <strong><code>FROM</code></strong> <code>stations</code> <strong><code>WHERE</code></strong> <code>tid IS NULL</code></p>
+</div>
+</div>
+</div>
+</section>
+<section id="sql-3" class="slide level2">
+<h2>SQL</h2>
+<p>Также в SQL распространены операторы:</p>
+<ul>
+<li><p><code>LIKE</code> — для выполнения неточных сравнений (например, поиска топонимов);</p></li>
+<li><p><code>BETWEEN</code> — для проверки вхождения в интервал значений;</p></li>
+<li><p><code>GROUP BY</code> — для выполнения агрегирования по атрибуту;</p></li>
+<li><p><code>JOIN</code> — для соединения таблиц (существуют разные виды соединений).</p></li>
+</ul>
+<p>При проверки условий используются стандартные символы:</p>
+<ul>
+<li><p><code>&gt;, &gt;=, =, &lt;, &lt;=</code></p></li>
+<li><p><code>&lt;&gt;, !=</code> — неравенство</p></li>
+</ul>
+</section>
+<section id="cловарик" class="slide level2">
+<h2>Cловарик</h2>
 </section>
 <section id="библиография" class="slide level2 smaller scrollable">
 <h2>Библиография</h2>
