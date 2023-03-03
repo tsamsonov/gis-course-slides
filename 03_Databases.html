@@ -586,6 +586,46 @@
 </tbody>
 </table>
 </section>
+<section id="шкалы-измерений-1" class="slide level2">
+<h2>Шкалы измерений</h2>
+<p>Допустимое множество операций над атрибутом зависит не только от его домена, но также от <strong>шкалы измерения</strong>.</p>
+<table>
+<colgroup>
+<col style="width: 26%">
+<col style="width: 33%">
+<col style="width: 39%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Шкала</th>
+<th>Арифметика</th>
+<th>Пример</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>номинальная</strong></td>
+<td>равенство / неравнство</td>
+<td>типы почв</td>
+</tr>
+<tr class="even">
+<td><strong>порядковая</strong></td>
+<td>+больше / меньше</td>
+<td>классы пожароопасности</td>
+</tr>
+<tr class="odd">
+<td><strong>интервальная</strong></td>
+<td>+разность, среднее</td>
+<td>температура воздуха</td>
+</tr>
+<tr class="even">
+<td><strong>относительная</strong></td>
+<td>+сумма, отношение</td>
+<td>валовой внутренний продукт</td>
+</tr>
+</tbody>
+</table>
+</section>
 <section id="геореляционная-бд" class="slide level2">
 <h2>Геореляционная БД</h2>
 <p><strong>Геореляционной</strong> называется реляционная база данных с поддержкой геометрических доменов значений.</p>
@@ -1056,8 +1096,70 @@
 <li><p><code>&lt;&gt;, !=</code> — неравенство</p></li>
 </ul>
 </section>
-<section id="cловарик" class="slide level2">
-<h2>Cловарик</h2>
+<section id="пространственные-запросы" class="slide level2">
+<h2>Пространственные запросы</h2>
+<p>Пространственные запросы аналогичны атрибутивным, но в качестве условия используют пространственные отношения.</p>
+
+<img data-src="images/sp_relations.svg" style="width:100.0%" class="r-stretch"></section>
+<section id="пространственные-запросы-1" class="slide level2">
+<h2>Пространственные запросы</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-left">
+<figure>
+<p><img data-src="images/dist_bld.svg" style="width:60.0%"></p>
+<p></p><figcaption>Дома на расстоянии 100 м от реки</figcaption><p></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-left">
+<figure>
+<p><img data-src="images/within_pts.svg" style="width:60.0%"></p>
+<p></p><figcaption>Почвенные разрезы в пределах леса</figcaption><p></p>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-left">
+<figure>
+<p><img data-src="images/touch_rds.svg" style="width:60.0%"></p>
+<p></p><figcaption>Дороги, примыкающие к границе</figcaption><p></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-left">
+<figure>
+<p><img data-src="images/dir_meteo.svg" style="width:55.0%"></p>
+<p></p><figcaption>Метеостанции к северо-западу от гидропоста</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="словарик" class="slide level2">
+<h2>Словарик</h2>
+<div class="columns">
+<div class="column" style="color: blue; text-align: end;">
+<p>База данных</p>
+<p>База пространственных данных</p>
+<p>Реляционная модель</p>
+<p>Атрибут</p>
+<p>Первичный ключ</p>
+<p>Домен</p>
+<p>СУБД</p>
+<p>Транзакция</p>
+<p>Атрибутивный запрос</p>
+<p>Пространственный запрос</p>
+</div><div class="column" style="color: red">
+<p>Database</p>
+<p>Spatial database</p>
+<p>Relational model</p>
+<p>Attribute</p>
+<p>Primary key</p>
+<p>Domain</p>
+<p>DBMS</p>
+<p>Transaction</p>
+<p>Attribute query</p>
+<p>Spatial query</p>
+</div>
+</div>
 </section>
 <section id="библиография" class="slide level2 smaller scrollable">
 <h2>Библиография</h2>
