@@ -11,7 +11,9 @@ format:
     theme: [default, custom.scss]
     slide-number: true
     footer: "Самсонов Т. Е. Основы геоинформатики: курс лекций для студентов географического факультета МГУ"
+    header-includes: <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/pt-sans" type="text/css"/>
 bibliography: references.yaml
+mainfont: PT Sans
 ---
 
 ## Создание объектов
