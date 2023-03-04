@@ -3,7 +3,6 @@ title: "Основы геоинформатики"
 subtitle: "Лекция 1: Пространственные данные"
 date: 10.02.2023
 author: "Самсонов Тимофей Евгеньевич"
-embed-resources: true
 execute:
   echo: false
 engine: knitr
@@ -12,7 +11,9 @@ format:
     theme: [default, custom.scss]
     slide-number: true
     footer: "Самсонов Т. Е. Основы геоинформатики: курс лекций для студентов географического факультета МГУ"
+    header-includes: <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/pt-sans" type="text/css"/>
 bibliography: references.yaml
+mainfont: PT Sans
 ---
 
 ## Географическая информация
