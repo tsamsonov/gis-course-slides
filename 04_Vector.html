@@ -503,23 +503,94 @@ A = \frac{1}{2}\sum_{i=0}^{n-1} \underbrace{(y_{i+1}+y_{i})}_{\texttt{основ
 </div>
 </div>
 </section>
-<section id="триангуляционное-покрытие" class="slide level2">
-<h2>Триангуляционное покрытие</h2>
-<p>Элементы триангуляционной модели имеют свои названия.</p>
-
-<img data-src="images/tin_details_7.svg" style="width:100.0%" class="r-stretch"></section>
 <section id="выпуклая-оболочка-1" class="slide level2">
 <h2>Выпуклая оболочка</h2>
-<p>Известный метод построения выпуклой оболочки — <strong>алгоритм Джарвиса</strong> <span class="citation" data-cites="jarvis1973">(<a href="#/библиография" role="doc-biblioref" onclick="">Jarvis 1973</a>)</span>:</p>
+<p>Известный метод построения — <strong>алгоритм Джарвиса</strong> <span class="citation" data-cites="jarvis1973">(<a href="#/библиография" role="doc-biblioref" onclick="">Jarvis 1973</a>)</span>:</p>
 <div class="columns">
 <div class="column" style="width:50%;">
 <ul>
 <li><p>находим <em>нулевую</em> точку с минимальной координатой <span class="math inline">\(X\)</span>;</p></li>
 <li><p>ищем <em>первую</em> точку с минимальным дирекционным углом;</p></li>
+<li><p>получаем отрезок <span class="math inline">\(p_0 p_1\)</span>;</p></li>
 <li><p>продолжаем поиск, находя следующий отрезок, образующий минимальный угол поворота относительно предыдущего.</p></li>
 </ul>
 </div><div class="column" style="width:50%;">
 <p><img data-src="images/jarvis.gif"></p>
+</div>
+</div>
+</section>
+<section id="диаграмма-вороного" class="slide level2">
+<h2>Диаграмма Вороного</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p><img data-src="images/voronoy_outline.svg" style="width:100.0%"></p>
+</div><div class="column" style="width:60%;">
+<dl>
+<dt>Диаграмма Вороного</dt>
+<dd>
+<p>Диаграмма Вороного конечного множества точек <span class="math inline">\(S\)</span> на плоскости представляет такое разбиение плоскости, при котором каждая область этого разбиения образует множество точек, более близких к одному из элементов множества <span class="math inline">\(S\)</span>, чем к любому другому элементу множества.</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="callout callout-tip callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Применение</strong></p>
+</div>
+<div class="callout-content">
+<p>Диаграмма Вороного используется при моделировании зон влияния объектов.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="триангуляционное-покрытие" class="slide level2">
+<h2>Триангуляционное покрытие</h2>
+<p>Элементы триангуляционной модели имеют свои названия.</p>
+
+<img data-src="images/tin_details_7.svg" style="width:100.0%" class="r-stretch"></section>
+<section id="центроид-и-срединная-ось" class="slide level2">
+<h2>Центроид и срединная ось</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Центроид</strong> — точка, представляющая среднее значение координат полигона:</p>
+<p><span class="math display">\[
+C = \Bigg(\frac{1}{n}\sum_{i=0}^n x_i, \frac{1}{n}\sum_{i=0}^n y_i \Bigg)
+\]</span></p>
+<p><strong>Срединная ось</strong> — линия равноудаленная от границ полигона.</p>
+</div><div class="column" style="width:50%;">
+<p><img data-src="images/centroid_axis.svg" style="width:100.0%"></p>
+</div>
+</div>
+<div class="callout callout-tip callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Применение</strong></p>
+</div>
+<div class="callout-content">
+<p>Используются для картографической генерализации.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="буферные-зоны" class="slide level2">
+<h2>Буферные зоны</h2>
+<p><strong>Буферная зона</strong> — это множество точек, располагающихся в пределах заданного расстояния относительно объекта.</p>
+<div class="columns">
+<div class="column" style="width:40%;">
+<ul>
+<li><p>буфер точки представляет собой круг;</p></li>
+<li><p>буфер полигона может быть положительным и отрицательным;</p></li>
+<li><p>буфер точки или линии всегда положительный.</p></li>
+</ul>
+</div><div class="column" style="width:60%;">
+<p><img data-src="images/buffering.svg" style="width:65.0%"></p>
 </div>
 </div>
 </section>
