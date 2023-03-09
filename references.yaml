@@ -182,4 +182,26 @@ references:
   publisher-place: Москва
   title: Эталонная модель управления данными
   type: report
+- id: jarvis1973
+  accessed: "17:46:06"
+  author:
+  - family: Jarvis
+    given: R.A.
+  container-title: Information Processing Letters
+  container-title-short: Information Processing Letters
+  DOI: 10.1016/0020-0190(73)90020-3
+  ISSN: 00200190
+  issue: 1
+  issued: 1973-03
+  key: VG5L6EJI
+  language: en
+  libraryID: 2
+  page: 18-21
+  providerKey: Zotero
+  source: DOI.org (Crossref)
+  title: On the identification of the convex hull of a finite set of
+    points in the plane
+  type: article-journal
+  URL: "https://linkinghub.elsevier.com/retrieve/pii/0020019073900203"
+  volume: 2
 ...

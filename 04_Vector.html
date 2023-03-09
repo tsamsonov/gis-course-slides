@@ -28,6 +28,25 @@
       margin: 0 0.8em 0.2em -1.6em;
       vertical-align: middle;
     }
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+    }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
   </style>
   <link rel="stylesheet" href="04_Vector_files/libs/revealjs/dist/theme/quarto.css" id="theme">
   <link href="04_Vector_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -365,7 +384,7 @@ L =\\ \sum_{i=0}^{n-1}\sqrt{(x_{i+1}-x_i)^2 + (y_{i+1}-y_i)^2}
 <p><span class="math display">\[
 A = \frac{1}{2}\sum_{i=0}^{n-1} \underbrace{(y_{i+1}+y_{i})}_{\texttt{основания}}\underbrace{(x_{i+1}-x_{i})}_{\texttt{высота}}
 \]</span></p>
-<div class="callout callout-tip callout-captioned callout-style-default">
+<div class="callout callout-note callout-captioned callout-style-default">
 <div class="callout-body">
 <div class="callout-caption">
 <div class="callout-icon-container">
@@ -387,9 +406,9 @@ A = \frac{1}{2}\sum_{i=0}^{n-1} \underbrace{(y_{i+1}+y_{i})}_{\texttt{основ
 <h2>Принадлежность точки полигону</h2>
 <p>Луч, выпущенный из точки в направлении оси <span class="math inline">\(X\)</span>, пересекает границу полигона <strong>нечетное</strong> количество раз.</p>
 <div class="columns">
-<div class="column" style="width:70%;">
+<div class="column" style="width:60%;">
 <p><img data-src="images/point_polygon.svg" style="width:90.0%"></p>
-</div><div class="column" style="width:30%;">
+</div><div class="column" style="width:40%;">
 <div class="callout callout-note callout-captioned callout-style-default">
 <div class="callout-body">
 <div class="callout-caption">
@@ -402,6 +421,19 @@ A = \frac{1}{2}\sum_{i=0}^{n-1} \underbrace{(y_{i+1}+y_{i})}_{\texttt{основ
 <p>Если луч пересекает одну из <em>вершин</em> полигона, это засчитывается как два пересечения, поскольку каждая вершина принадлежит двум отрезкам.</p>
 </div>
 </div>
+</div>
+</div>
+</div>
+<div class="callout callout-tip callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Применение</strong></p>
+</div>
+<div class="callout-content">
+<p>Данная операция активно используется при оценке топологических отношений — например, для выполнения пространственных запросов.</p>
 </div>
 </div>
 </div>
@@ -429,15 +461,77 @@ A = \frac{1}{2}\sum_{i=0}^{n-1} \underbrace{(y_{i+1}+y_{i})}_{\texttt{основ
 <p><strong>Применение</strong></p>
 </div>
 <div class="callout-content">
-<p>Ограничивающий прямоугольник является важным элементом <em>метаданных</em> — описания пространственных данных, но также используется и в аналитических задачах</p>
+<p>Ограничивающий прямоугольник является важным элементом <em>метаданных</em> — описания пространственных данных, но также используется и в аналитических задачах.</p>
 </div>
 </div>
 </div>
 </section>
-<section id="библиография" class="slide level2">
+<section id="выпуклая-оболочка" class="slide level2">
+<h2>Выпуклая оболочка</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Выпуклая оболочка</strong> — наименьший по площади выпуклый многоугольник, <em>покрывающий</em> заданное множество точек.</p>
+<div class="callout callout-note callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Выпуклое множество</strong></p>
+</div>
+<div class="callout-content">
+<p>Множество, в котором отрезок, соединяющий любые две точки также находится внутри этого множества.</p>
+<p><img data-src="images/non_convex.svg" style="width:65.0%"></p>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<p><img data-src="images/convex_hull.svg" style="width:75.0%"></p>
+<div class="callout callout-tip callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Применение</strong></p>
+</div>
+<div class="callout-content">
+<p>Выпуклые оболочки используются для восстановления ареалов по точечным измерениям. Также выпуклая оболочка является границей <em>триангуляционного покрытия</em>.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="триангуляционное-покрытие" class="slide level2">
+<h2>Триангуляционное покрытие</h2>
+<p>Элементы триангуляционной модели имеют свои названия.</p>
+
+<img data-src="images/tin_details_7.svg" style="width:100.0%" class="r-stretch"></section>
+<section id="выпуклая-оболочка-1" class="slide level2">
+<h2>Выпуклая оболочка</h2>
+<p>Известный метод построения выпуклой оболочки — <strong>алгоритм Джарвиса</strong> <span class="citation" data-cites="jarvis1973">(<a href="#/библиография" role="doc-biblioref" onclick="">Jarvis 1973</a>)</span>:</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li><p>находим <em>нулевую</em> точку с минимальной координатой <span class="math inline">\(X\)</span>;</p></li>
+<li><p>ищем <em>первую</em> точку с минимальным дирекционным углом;</p></li>
+<li><p>продолжаем поиск, находя следующий отрезок, образующий минимальный угол поворота относительно предыдущего.</p></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><img data-src="images/jarvis.gif"></p>
+</div>
+</div>
+</section>
+<section id="библиография" class="slide level2 smaller scrollable">
 <h2>Библиография</h2>
 <div class="footer footer-default">
 <p>Самсонов Т. Е. Основы геоинформатики: курс лекций для студентов географического факультета МГУ</p>
+</div>
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-jarvis1973" class="csl-entry" role="doc-biblioentry">
+Jarvis, R.A. 1973. <span>“On the Identification of the Convex Hull of a Finite Set of Points in the Plane.”</span> <em>Information Processing Letters</em> 2 (1): 18–21. <a href="https://doi.org/10.1016/0020-0190(73)90020-3">https://doi.org/10.1016/0020-0190(73)90020-3</a>.
+</div>
 </div>
 </section>
     </div>
