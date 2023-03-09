@@ -334,10 +334,10 @@
 <section id="длина-периметр" class="slide level2">
 <h2>Длина / периметр</h2>
 <div class="columns">
-<div class="column" style="width:60%;">
+<div class="column" style="width:50%;">
 <p>Рассчитываются как сумма длин отрезков, составляющих контур объекта:</p>
 <p><span class="math display">\[
-L = \sum_{i=0}^{n-1}\sqrt{(x_{i}-x_{i+1})^2 + (y_{i}-y_{i+1})^2}
+L =\\ \sum_{i=0}^{n-1}\sqrt{(x_{i+1}-x_i)^2 + (y_{i+1}-y_i)^2}
 \]</span></p>
 <div class="callout callout-note callout-captioned callout-style-default">
 <div class="callout-body">
@@ -352,8 +352,34 @@ L = \sum_{i=0}^{n-1}\sqrt{(x_{i}-x_{i+1})^2 + (y_{i}-y_{i+1})^2}
 </div>
 </div>
 </div>
-</div><div class="column" style="width:40%;">
+</div><div class="column" style="width:50%;">
 <p><img data-src="images/perimeter.svg" style="width:100.0%"></p>
+</div>
+</div>
+</section>
+<section id="площадь" class="slide level2">
+<h2>Площадь</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>Рассчитывается как сумма площадей трапеций, ограниченных сверху отрезками, составляющими контур объекта:</p>
+<p><span class="math display">\[
+A = \frac{1}{2}\sum_{i=0}^{n-1} \underbrace{(y_{i+1}+y_{i})}_{\texttt{основания}}\underbrace{(x_{i+1}-x_{i})}_{\texttt{высота}}
+\]</span></p>
+<div class="callout callout-tip callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Отрицательная площадь</strong></p>
+</div>
+<div class="callout-content">
+<p>Трапеции, у которых <span class="math inline">\(i+1\)</span>-я точка имеет меньший X, чем <span class="math inline">\(i\)</span>-я, имеют отрицательную площадь.</p>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<p><img data-src="images/area.svg" style="width:100.0%"></p>
 </div>
 </div>
 </section>
