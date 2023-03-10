@@ -345,7 +345,7 @@
 
 <section id="title-slide" class="center">
   <h1 class="title">Основы геоинформатики</h1>
-  <p class="subtitle">Лекция 4: Векторный и сетевой анализ</p>
+  <p class="subtitle">Лекция 4: Векторный анализ</p>
   <p class="author">Самсонов Тимофей Евгеньевич</p>
   <p class="date">10.03.2023</p>
 </section>
@@ -706,6 +706,51 @@ C = \Bigg(\frac{1}{n}\sum_{i=0}^n x_i, \frac{1}{n}\sum_{i=0}^n y_i \Bigg)
 </div>
 </div><div class="column" style="width:50%;">
 <p><img data-src="images/clip.svg" style="width:100.0%"></p>
+</div>
+</div>
+</section>
+<section id="оверлей-2" class="slide level2">
+<h2>Оверлей</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Пространственная ассоциация</strong> — взаимосвязь местоположения объектов — также может быть исследована путем оверлея.</p>
+<p>Для двух классов <span class="math inline">\(A\)</span> и <span class="math inline">\(B\)</span>:</p>
+<ul>
+<li><p>односторонняя ассоциация:<br>
+<span class="math inline">\(|A \cap B|/ |A|\)</span></p></li>
+<li><p>двусторонняя ассоциация:<br>
+<span class="math inline">\(|A \cap B| / |A \cup B|\)</span></p></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><img data-src="images/assoc.svg" style="width:80.0%"></p>
+</div>
+</div>
+<p>Для анализа ассоциации двух явлений, состоящих из множества классов, используются специальные индексы. Например, индекс <a href="https://en.wikipedia.org/wiki/Cramér%27s_V"><strong>Крамера V</strong></a>.</p>
+</section>
+<section id="оверлей-3" class="slide level2">
+<h2>Оверлей</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Пространственные соотношения</strong> различных типов объектов в пределах заданных участков также определяются методом оверлея.</p>
+<p>Доля класса <span class="math inline">\(A\)</span> в пределах участка <span class="math inline">\(C\)</span>:</p>
+<p><span class="math display">\[
+|A \cap C|/ |C|
+\]</span></p>
+</div><div class="column" style="width:50%;">
+<p><img data-src="images/ratio.svg" style="width:100.0%"></p>
+</div>
+</div>
+<div class="callout callout-tip callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Пример</strong></p>
+</div>
+<div class="callout-content">
+<p>Модели формирования речного стока работают на растровой сетке и требуют задания соотношения типов подстилающей поверхности для каждой ячейки.</p>
+</div>
 </div>
 </div>
 </section>
