@@ -356,7 +356,7 @@
 <div class="column" style="width:50%;">
 <p>Рассчитываются как сумма длин отрезков, составляющих контур объекта:</p>
 <p><span class="math display">\[
-L =\\ \sum_{i=0}^{n-1}\sqrt{(x_{i+1}-x_i)^2 + (y_{i+1}-y_i)^2}
+L =\\ \sum_{i=0}^{n-2}\sqrt{(x_{i+1}-x_i)^2 + (y_{i+1}-y_i)^2}
 \]</span></p>
 <div class="callout callout-note callout-captioned callout-style-default">
 <div class="callout-body">
@@ -382,7 +382,7 @@ L =\\ \sum_{i=0}^{n-1}\sqrt{(x_{i+1}-x_i)^2 + (y_{i+1}-y_i)^2}
 <div class="column" style="width:50%;">
 <p>Рассчитывается как сумма площадей трапеций, ограниченных сверху отрезками, составляющими контур объекта:</p>
 <p><span class="math display">\[
-A = \frac{1}{2}\sum_{i=0}^{n-1} \underbrace{(y_{i+1}+y_{i})}_{\texttt{основания}}\underbrace{(x_{i+1}-x_{i})}_{\texttt{высота}}
+A = \frac{1}{2}\sum_{i=0}^{n-2} \underbrace{(y_{i+1}+y_{i})}_{\texttt{основания}}\underbrace{(x_{i+1}-x_{i})}_{\texttt{высота}}
 \]</span></p>
 <div class="callout callout-note callout-captioned callout-style-default">
 <div class="callout-body">
@@ -558,7 +558,7 @@ A = \frac{1}{2}\sum_{i=0}^{n-1} \underbrace{(y_{i+1}+y_{i})}_{\texttt{основ
 <div class="column" style="width:50%;">
 <p><strong>Центроид</strong> — точка, представляющая среднее значение координат полигона:</p>
 <p><span class="math display">\[
-C = \Bigg(\frac{1}{n}\sum_{i=0}^n x_i, \frac{1}{n}\sum_{i=0}^n y_i \Bigg)
+C = \Bigg(\frac{1}{n}\sum_{i=0}^{n-1} x_i, \frac{1}{n}\sum_{i=0}^{n-1} y_i \Bigg)
 \]</span></p>
 <p><strong>Срединная ось</strong> — линия равноудаленная от границ полигона.</p>
 </div><div class="column" style="width:50%;">
@@ -661,9 +661,9 @@ C = \Bigg(\frac{1}{n}\sum_{i=0}^n x_i, \frac{1}{n}\sum_{i=0}^n y_i \Bigg)
 </div>
 </div>
 </section>
-<section id="слияние" class="slide level2">
-<h2>Слияние</h2>
-<p><strong>Слияние</strong> — это объединение геометрий пересекающихся (касающихся) объектов с одинаковым значением атрибута.</p>
+<section id="слияние-объединение-по-признаку" class="slide level2">
+<h2>Слияние (объединение по признаку)</h2>
+<p><strong>Слияние</strong> (объединение по признаку) — это объединение геометрий пересекающихся объектов с одинаковым значением атрибута.</p>
 
 <img data-src="images/dissolve.svg" style="width:85.0%" class="r-stretch"><div class="callout callout-tip callout-captioned callout-style-default">
 <div class="callout-body">
@@ -725,7 +725,7 @@ C = \Bigg(\frac{1}{n}\sum_{i=0}^n x_i, \frac{1}{n}\sum_{i=0}^n y_i \Bigg)
 <p><img data-src="images/assoc.svg" style="width:80.0%"></p>
 </div>
 </div>
-<p>Для анализа ассоциации двух явлений, состоящих из множества классов, используются специальные индексы. Например, индекс <a href="https://en.wikipedia.org/wiki/Cramér%27s_V"><strong>Крамера V</strong></a>.</p>
+<p>Для анализа ассоциации двух явлений — например <em>типов почв и рельефа</em> — состоящих из множества классов, используются специальные индексы. Например, индекс <a href="https://en.wikipedia.org/wiki/Cramér%27s_V"><strong>Крамера V</strong></a>.</p>
 </section>
 <section id="оверлей-3" class="slide level2">
 <h2>Оверлей</h2>
@@ -751,6 +751,115 @@ C = \Bigg(\frac{1}{n}\sum_{i=0}^n x_i, \frac{1}{n}\sum_{i=0}^n y_i \Bigg)
 <div class="callout-content">
 <p>Модели формирования речного стока работают на растровой сетке и требуют задания соотношения типов подстилающей поверхности для каждой ячейки.</p>
 </div>
+</div>
+</div>
+</section>
+<section id="отношение-геометрии-и-атрибутов" class="slide level2">
+<h2>Отношение геометрии и атрибутов</h2>
+<p>В геореляционных базах данных допустимое множество операций над атрибутом также зависит от того как он получен относительно пространства.</p>
+<p><strong>Опора измерений</strong> — физический объем, подвергнутый измерению.</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="callout callout-note callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Экстенсивные атрибуты</strong></p>
+</div>
+<div class="callout-content">
+<p>Пропорциональны опоре измерений. Суммируются при объединении территорий и делятся при разделении.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/extensive.svg" style="width:100.0%"></p>
+<p></p><figcaption>Численность населения</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="callout callout-note callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Интенсивные атрибуты</strong></p>
+</div>
+<div class="callout-content">
+<p>Не пропорциональны опоре измерений. Осредняются при объединении территорий и остаются прежними при разделении.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/intensive.svg" style="width:100.0%"></p>
+<p></p><figcaption>Плотность населения</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="оверлей-4" class="slide level2">
+<h2>Оверлей</h2>
+<p><strong>Интерполяция, взвешенная на площадь</strong> — способ пересчета количественного показателя между сетками учетных единиц.</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>Для каждой из <span class="math inline">\(q\)</span> выходных единиц <span class="math inline">\(T_j\)</span>, средневзвешенное значение <span class="math inline">\(Y_i\)</span> извлеченное из <span class="math inline">\(p\)</span> исходных единиц <span class="math inline">\(S_i\)</span>, равно:</p>
+<p><span class="math display">\[
+\hat{Y}_j(T_j) = \sum_{i=1}^p w_{ij} Y_i(S_i)
+\]</span></p>
+<p>где <span class="math inline">\(w_{ij}\)</span> зависит от пересечения выходных и исходных единиц <span class="math inline">\(|A_{ij}| = |T_j \cap S_i|\)</span>.</p>
+</div><div class="column" style="width:50%;">
+<p><img data-src="images/areaweighted.svg" style="width:100.0%"></p>
+</div>
+</div>
+</section>
+<section id="оверлей-5" class="slide level2">
+<h2>Оверлей</h2>
+<p><strong>Интерполяция, взвешенная на площадь</strong> — способ пересчета количественного показателя между сетками учетных единиц.</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>Для каждой из <span class="math inline">\(q\)</span> выходных единиц <span class="math inline">\(T_j\)</span>, средневзвешенное значение <span class="math inline">\(Y_i\)</span> извлеченное из <span class="math inline">\(p\)</span> исходных единиц <span class="math inline">\(S_i\)</span>, равно:</p>
+<p><span class="math display">\[
+\hat{Y}_j(T_j) = \sum_{i=1}^p w_{ij} Y_i(S_i)
+\]</span></p>
+<ul>
+<li><p>экстенсивная: <span class="math inline">\(w_{ij} = |A_{ij}| / |S_i|\)</span></p></li>
+<li><p>интенсивная: <span class="math inline">\(w_{ij} = |A_{ij}| / |T_j|\)</span></p></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><img data-src="images/areaweighted.svg" style="width:100.0%"></p>
+</div>
+</div>
+</section>
+<section id="словарик" class="slide level2">
+<h2>Словарик</h2>
+<div class="columns">
+<div class="column" style="color: blue; text-align: end;">
+<p>Огранич. прямоугольник</p>
+<p>Выпуклая оболочка</p>
+<p>Диаграмма Вороного</p>
+<p>Центроид</p>
+<p>Срединная ось</p>
+<p>Буферная зона</p>
+<p>Слияние</p>
+<p>Оверлей</p>
+<p>Обрезка</p>
+<p>Интерполяция, взвешенная на площадь</p>
+</div><div class="column" style="color: red">
+<p>Bounding box</p>
+<p>Convex hull</p>
+<p>Voronoy diagram</p>
+<p>Centroid</p>
+<p>Medial axis</p>
+<p>Buffer</p>
+<p>Dissolve</p>
+<p>Overlay</p>
+<p>Clip</p>
+<p>Area-weighted interpolation</p>
 </div>
 </div>
 </section>
