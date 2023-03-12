@@ -367,7 +367,7 @@ L =\\ \sum_{i=0}^{n-2}\sqrt{(x_{i+1}-x_i)^2 + (y_{i+1}-y_i)^2}
 <p><strong>Полигон</strong></p>
 </div>
 <div class="callout-content">
-<p>У полигона последняя точка должна иметь такие же координаты как и первая.</p>
+<p>У полигона последняя точка должна иметь такие же координаты, как и первая.</p>
 </div>
 </div>
 </div>
@@ -418,7 +418,7 @@ A = \frac{1}{2}\sum_{i=0}^{n-2} \underbrace{(y_{i+1}+y_{i})}_{\texttt{основ
 <p><strong>Обратите внимание</strong></p>
 </div>
 <div class="callout-content">
-<p>Если луч пересекает одну из <em>вершин</em> полигона, это засчитывается как два пересечения, поскольку каждая вершина принадлежит двум отрезкам.</p>
+<p>Если луч пересекает одну из <em>вершин</em> полигона, и оба примыкающих к ней отрезка находятся по одну сторону от луча, это засчитывается как два пересечения.</p>
 </div>
 </div>
 </div>
@@ -700,7 +700,7 @@ C = \Bigg(\frac{1}{n}\sum_{i=0}^{n-1} x_i, \frac{1}{n}\sum_{i=0}^{n-1} y_i \Bigg
 <p><strong>Clip</strong></p>
 </div>
 <div class="callout-content">
-<p>Обрезка данных является частным случаем пересечения с полигональным объектов, при котором наследуются только атрибуты обрезаемых объевто. Она настолько распространена, что для нее используется особое название — <strong>Clip</strong>.</p>
+<p>Обрезка данных <em>(clip)</em> является частным случаем пересечения с полигональным объектом, при котором наследуются только атрибуты обрезаемых объектов.</p>
 </div>
 </div>
 </div>
@@ -809,26 +809,11 @@ C = \Bigg(\frac{1}{n}\sum_{i=0}^{n-1} x_i, \frac{1}{n}\sum_{i=0}^{n-1} y_i \Bigg
 <div class="column" style="width:50%;">
 <p>Для каждой из <span class="math inline">\(q\)</span> выходных единиц <span class="math inline">\(T_j\)</span>, средневзвешенное значение <span class="math inline">\(Y_i\)</span> извлеченное из <span class="math inline">\(p\)</span> исходных единиц <span class="math inline">\(S_i\)</span>, равно:</p>
 <p><span class="math display">\[
-\hat{Y}_j(T_j) = \sum_{i=1}^p w_{ij} Y_i(S_i)
-\]</span></p>
-<p>где <span class="math inline">\(w_{ij}\)</span> зависит от пересечения выходных и исходных единиц <span class="math inline">\(|A_{ij}| = |T_j \cap S_i|\)</span>.</p>
-</div><div class="column" style="width:50%;">
-<p><img data-src="images/areaweighted.svg" style="width:100.0%"></p>
-</div>
-</div>
-</section>
-<section id="оверлей-5" class="slide level2">
-<h2>Оверлей</h2>
-<p><strong>Интерполяция, взвешенная на площадь</strong> — способ пересчета количественного показателя между сетками учетных единиц.</p>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p>Для каждой из <span class="math inline">\(q\)</span> выходных единиц <span class="math inline">\(T_j\)</span>, средневзвешенное значение <span class="math inline">\(Y_i\)</span> извлеченное из <span class="math inline">\(p\)</span> исходных единиц <span class="math inline">\(S_i\)</span>, равно:</p>
-<p><span class="math display">\[
-\hat{Y}_j(T_j) = \sum_{i=1}^p w_{ij} Y_i(S_i)
+\hat{Y_j}(T_j) = \sum_{i=1}^p w_{ij} Y_i(S_i)
 \]</span></p>
 <ul>
-<li><p>экстенсивная: <span class="math inline">\(w_{ij} = |A_{ij}| / |S_i|\)</span></p></li>
-<li><p>интенсивная: <span class="math inline">\(w_{ij} = |A_{ij}| / |T_j|\)</span></p></li>
+<li><p>экстенсивная: <span class="math inline">\(w_{ij} = \frac{|T_j \cap S_i|}{|S_i|}\)</span></p></li>
+<li><p>интенсивная: <span class="math inline">\(w_{ij} = \frac{|T_j \cap S_i|}{|T_j|}\)</span></p></li>
 </ul>
 </div><div class="column" style="width:50%;">
 <p><img data-src="images/areaweighted.svg" style="width:100.0%"></p>
